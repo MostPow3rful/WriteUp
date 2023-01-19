@@ -92,3 +92,4 @@ CHANNEL_NAME=@YOUR_CHANNEL_ID
 ```
 
 ## 📹 Watch Video Below
+[![asciicast](https://asciinema.org/a/jDtA4QHs0s4zKJDXOdUK7dVdu.svg)](https://asciinema.org/a/jDtA4QHs0s4zKJDXOdUK7dVdu)
