@@ -96,7 +96,7 @@ CHANNEL_NAME=@YOUR_CHANNEL_ID
 - name : Crontab
     - Description : You Can Automate Process to Run main.go File
     - Example : With Below Code, You Can Run main.go Every 1 Hours
-    - Command : 0 */1 * * * /PATH/TO/WriteUp/main
+    - Command : 0 */1 * * * /usr/bin/go /PATH/TO/WriteUp/main.go
     - Resource : https://geekflare.com/crontab-linux-with-real-time-examples-and-tools/
 ```
 
