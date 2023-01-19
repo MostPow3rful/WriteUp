@@ -91,15 +91,5 @@ DISCORD_WEBHOOK=YOUR_DISCORD_WEBHOOK
 CHANNEL_NAME=@YOUR_CHANNEL_ID
 ```
 
-## ⚡️ Automate WriteUp Sender
-```yaml
-- name : Crontab
-    - Description : You Can Automate Process to Run main.go File
-    - Example : With Below Code, You Can Run main.go Every 1 Hours
-    - Command : 0 */1 * * * cd PATH/TO/WriteUp;/usr/bin/go run main.go
-    - Resource : https://geekflare.com/crontab-linux-with-real-time-examples-and-tools/
-```
-
-
 ## 📹 Watch Video Below
 [![asciicast](https://asciinema.org/a/jDtA4QHs0s4zKJDXOdUK7dVdu.svg)](https://asciinema.org/a/jDtA4QHs0s4zKJDXOdUK7dVdu)
