@@ -64,7 +64,7 @@
     - Description : Go To BotFather : https://t.me/BotFather
 
 - Step Two :
-    - Description : Star The Bot
+    - Description : Start The Bot
     - Command     : /start
 
 - Step Three :
