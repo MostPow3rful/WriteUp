@@ -7,7 +7,6 @@ import (
 type Items struct {
 	XMLName     xml.Name `xml:"item"`
 	Title       string   `xml:"title"`
-	Link        string   `xml:"link"`
+	Link        string   `xml:"guid"`
 	PublishDate string   `xml:"pubDate"`
-	Category    []string `xml:"category"`
 }
