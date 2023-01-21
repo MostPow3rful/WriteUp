@@ -52,7 +52,7 @@ func ConnectToSqlDatabase() {
 
 	Database, err = sql.Open("mysql", MySqlData.Username+":"+MySqlData.Password+"@tcp(0.0.0.0:3306)/WriteUp")
 	if err != nil {
-		config.SetLog("E", "config.ConnectToSqlDatabase() -> Can't Open URLShortner Database")
+		config.SetLog("E", "config.ConnectToSqlDatabase() -> Can't Open WriteUp Database")
 		config.SetLog("D", err.Error())
 		config.ErrorLog.Fatal(err)
 	}
