@@ -74,9 +74,6 @@ func SendWriteUp(_title, _link, _pubDate string) {
 }
 
 func AddWriteUp(_title, _link, _pubDate string) {
-	var categories string = ""
-	categories = categories[0 : len(categories)-3]
-
 	_, err = Database.Query(`
 	INSERT INTO data
 	(Title, Link, PublishDate)
