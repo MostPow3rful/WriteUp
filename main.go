@@ -7,12 +7,10 @@ import (
 
 	"bufio"
 	"os"
-	"sync"
 )
 
 func main() {
 	var (
-		wg      *sync.WaitGroup = &sync.WaitGroup{}
 		scanner *bufio.Scanner  = &bufio.Scanner{}
 		file    *os.File        = &os.File{}
 		err     error           = nil
@@ -27,11 +25,7 @@ func main() {
 
 	scanner = bufio.NewScanner(file)
 	for scanner.Scan() {
-		wg.Add(1)
-		go func(_url string) {
-			request.GetWriteUps(_url)
-			wg.Done()
-		}(scanner.Text())
+		request.GetWriteUps(scanner.Text())
 	}
 
 	err = scanner.Err()
@@ -40,5 +34,4 @@ func main() {
 		config.SetLog("D", err.Error())
 	}
 
-	wg.Wait()
 }
