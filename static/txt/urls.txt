@@ -17,7 +17,7 @@ https://medium.com/feed/tag/infosec
 https://medium.com/feed/tag/writeup
 https://medium.com/feed/tag/vulnhub
 https://medium.com/@Hacker0x01/feed
-https://medium.com/tag/web-hacking
+https://medium.com/feed/tag/web-hacking
 https://medium.com/feed/tag/recon
 https://surya-dev.medium.com/feed
 https://medium.com/feed/tag/ctf
