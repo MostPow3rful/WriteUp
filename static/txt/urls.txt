@@ -1,4 +1,5 @@
 https://medium.com/feed/tag/application-security
+https://medium.com/feed/tag/blockchain-security
 https://medium.com/feed/tag/penetration-testing
 https://medium.com/feed/tag/hackthebox-writeup
 https://medium.com/feed/tag/bug-bounty-writeup
@@ -11,7 +12,9 @@ https://medium.com/feed/tag/cybersecurity
 https://medium.com/feed/tag/web-3-point-0
 https://medium.com/feed/tag/sql-injection
 https://medium.com/feed/tag/vulnerability
+https://medium.com/feed/tag/web3-security
 https://medium.com/feed/tag/owasp-top-10
+https://medium.com/feed/tag/web-security
 https://medium.com/feed/tag/api-security
 https://medium.com/feed/tag/web-hacking
 https://medium.com/feed/tag/xss-attack
