@@ -4,18 +4,18 @@
 ```yaml
 - name : Python
     - type    : Programming Language
-    - version : >= 3.10.18
+    - version : >= 3.10
 
 - name : Go
     - type    : Programming Language
-    - Version : >= 1.19.4
+    - Version : >= 1.19
 
 - name : MySQL
     - type : Database
 
 - name : Git
     - type    : Tool
-    - version : >= 2.39.0
+    - version : >= 2.39
 
 - name : Linux
     - type : Distro
