@@ -9,7 +9,6 @@ https://medium.com/feed/tag/ethical-hacking
 https://medium.com/feed/tag/authentication
 https://medium.com/feed/tag/reconciliation
 https://medium.com/feed/tag/cybersecurity
-https://medium.com/feed/tag/web-3-point-0
 https://medium.com/feed/tag/sql-injection
 https://medium.com/feed/tag/vulnerability
 https://medium.com/feed/tag/web3-security
@@ -35,7 +34,6 @@ https://medium.com/feed/tag/osint
 https://medium.com/feed/tag/recon
 https://surya-dev.medium.com/feed
 https://medium.com/feed/tag/owasp
-https://medium.com/feed/tag/web3
 https://medium.com/feed/tag/ssrf
 https://medium.com/feed/tag/csrf
 https://medium.com/feed/tag/ctf
