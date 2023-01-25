@@ -21,9 +21,9 @@ var (
 	// Sturct For Information Log
 	infoLog = log.New(os.Stdout, "[INFO] ", flags)
 	// Sturct For Warning Log
-	warnLog = log.New(os.Stdout, "[WARN] -> ", flags)
+	warnLog = log.New(os.Stdout, "[WARN] ", flags)
 	// Sturct For Error Log
-	ErrorLog = log.New(os.Stdout, "[ERROR]  ", flags)
+	ErrorLog = log.New(os.Stdout, "[ERROR] ", flags)
 	// Struct For Default Log
 	defaultLog = log.New(os.Stderr, "[SYS] ", flags)
 )
