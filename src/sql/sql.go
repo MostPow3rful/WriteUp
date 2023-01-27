@@ -5,6 +5,7 @@ import (
 	"github.com/JesusKian/WriteUp/src/discord"
 	"github.com/JesusKian/WriteUp/src/structure"
 	"github.com/JesusKian/WriteUp/src/telegram"
+	_ "github.com/go-sql-driver/mysql"
 
 	"bufio"
 	"database/sql"
