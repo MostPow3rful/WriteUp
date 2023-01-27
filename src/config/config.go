@@ -20,8 +20,6 @@ var (
 	flags = log.Lshortfile
 	// Sturct For Information Log
 	infoLog = log.New(os.Stdout, "[INFO] ", flags)
-	// Sturct For Warning Log
-	warnLog = log.New(os.Stdout, "[WARN] ", flags)
 	// Sturct For Error Log
 	ErrorLog = log.New(os.Stdout, "[ERROR] ", flags)
 	// Struct For Default Log
@@ -48,10 +46,6 @@ func SetLog(_logType string, _msg string) {
 	case "I":
 		infoLog.SetOutput(logFile)
 		infoLog.Println(_msg)
-
-	case "W":
-		warnLog.SetOutput(logFile)
-		warnLog.Println(_msg)
 
 	case "E":
 		ErrorLog.SetOutput(logFile)
@@ -81,7 +75,6 @@ func init() {
 
 	log.SetFlags(log.Ldate | log.Ltime)
 	infoLog.SetFlags(log.Ldate | log.Ltime)
-	warnLog.SetFlags(log.Ldate | log.Ltime)
 	ErrorLog.SetFlags(log.Ldate | log.Ltime)
 	SetLog("I", "config.init() -> Flags Setuped")
 }
