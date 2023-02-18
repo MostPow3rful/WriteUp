@@ -14,7 +14,7 @@ func Send(_title, _link, _pubDate string) {
 		err  error          = nil
 		resp *http.Response = &http.Response{}
 		body []byte         = []byte{}
-		url  string         = fmt.Sprintf("https://api.telegram.org/bot%s/sendMessage", config.TelegramApi)
+		url  string         = fmt.Sprintf("https://api.telegram.org/bot%s/sendMessage", config.EnvData.TelegramApi)
 		text string         = fmt.Sprintf(`	      📰 %s
 		
 		📅 %s
@@ -23,7 +23,7 @@ func Send(_title, _link, _pubDate string) {
 	)
 
 	body, _ = json.Marshal(map[string]interface{}{
-		"chat_id":    config.ChannelName,
+		"chat_id":    config.EnvData.ChannelName,
 		"text":       text,
 		"parse_mode": "Markdown",
 	})
