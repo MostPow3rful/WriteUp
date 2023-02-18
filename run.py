@@ -2,6 +2,7 @@ import os
 import subprocess
 import mysql.connector
 
+from dotenv import dotenv_values
 from time import sleep
 from sys import exit as error
 from colorama import (
@@ -19,11 +20,15 @@ class Color:
 
 
 class Config(Color):
-    def __init__(self, _password: str = "", _distro: int = 0) -> None:
+    def __init__(self, _username: str = str(), _password: str = str(), _distro: int = int()) -> None:
         self._clear()
         print(self._banner())
         sleep(1)
-        self._USERNAME: str = "root"
+
+        # Checking Username
+        if _username is str():
+            error(f"{Config.RED}[!] {Config.CYAN}Invalid Username For MySQL")
+        self._USERNAME: str = _username
 
         # Checking Password
         if _password is str():
@@ -50,7 +55,7 @@ class Config(Color):
         # Checking Directories And Files
         self._check_directory_file()
 
-        # Configing MySQL
+        # ConfigMySQL
         self._config_mysql()
 
         # Creating Executable File Of main.go
@@ -133,15 +138,14 @@ class Config(Color):
 
     def _check_directory_file(self) -> None:
         DIRS: tuple = (
-            "json",
             "log",
             "src",
-            "src/sql",
-            "src/config",
+            "src/structure",
+            "src/telegram",
             "src/discord",
             "src/request",
-            "src/telegram",
-            "src/structure",
+            "src/config",
+            "src/sql",
             "static",
             "static/txt",
         )
@@ -151,17 +155,15 @@ class Config(Color):
             "go.sum",
             "main.go",
             "log/log.log",
-            "json/Secret.json",
-            "requirements.txt",
-            "src/sql/sql.go",
             "src/config/config.go",
+            "src/structure/channel.go",
+            "src/structure/secret.go",
+            "src/structure/items.go",
+            "src/structure/rss.go",
+            "src/telegram/telegram.go",
             "src/discord/discord.go",
             "src/request/request.go",
-            "src/telegram/telegram.go",
-            "src/structure/rss.go",
-            "src/structure/items.go",
-            "src/structure/secret.go",
-            "src/structure/channel.go",
+            "src/sql/sql.go",
             "static/txt/urls.txt",
         )
 
@@ -220,7 +222,7 @@ class Config(Color):
         [... for _ in cursor]
 
         cursor.execute(
-            "CREATE TABLE IF NOT EXISTS data (Title VARCHAR(300), Link VARCHAR(300), PublishDate VARCHAR(300))"
+            "CREATE TABLE IF NOT EXISTS data (Title VARCHAR(300), Title VARCHAR(300), Link VARCHAR(300), PublishDate VARCHAR(300))"
         )
         database.commit()
         [... for _ in cursor]
@@ -228,45 +230,19 @@ class Config(Color):
         cursor.execute(
             "SELECT username, password FROM MYSQL_USER_PASS GROUP BY username, password"
         )
-        RESULT = cursor.fetchall()[0]
-
-        os.system('echo " " > json/Secret.json')
-        with open(file="./json/Secret.json", mode="a") as file:
-            file.write(
-                '{\n\t"username":"'+RESULT[0] +
-                '",\n\t"password":"'+RESULT[1]+'"\n}\n'
-            )
+        [... for _ in cursor]
 
     def _clear(self) -> None:
         os.system("clear")
 
 
 def main() -> None:
-    PASSWORD: str = input(
-        f"""
-        {Color.RED}[?] {Color.CYAN} Please Enter Your MySQL Password
-        {Color.RED}[{Color.GREEN}Default=System Password{Color.RED}] {Color.WHITE}- {Color.RED}[{Color.GREEN}Need For Config{Color.RED}]
-                    {Color.CYAN}-> """
-    )
-
-    try:
-        KERNEL: int = int(
-            input(f"""
-        {Color.RED}[1] {Color.CYAN} Debian
-        {Color.RED}[2] {Color.CYAN} Arch
-        {Color.RED}[3] {Color.CYAN} Fedora
-        {Color.RED}[4] {Color.CYAN} Another . . .
-            
-                    -> """)
-        )
-    except ValueError:
-        error(
-            f"{Color.RED}[!] {Color.CYAN}ValueError : U Must Enter Number In Range 1-4 In Kernel Option"
-        )
+    ENV: dict = dotenv_values("config.env")
 
     Config(
-        PASSWORD,
-        KERNEL
+        ENV["MYSQL_USERNAME"],
+        ENV["MYSQL_PASSWORD"],
+        int(ENV["DISTRO"]),
     )
 
 
