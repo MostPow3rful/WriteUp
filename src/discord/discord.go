@@ -12,7 +12,7 @@ func Send(_title, _link, _pubDate string) {
 		err      error                  = nil
 		url      string                 = config.EnvData.DiscordWebhook
 		username string                 = "🔒 Bug Bounty WriteUps"
-		content  string                 = fmt.Sprintf("> ```yaml\n> - 📰 %s\n> - 📅 %s\n> ```\n> **🔗 %s**\nhttps://media.discordapp.net/attachments/846076688789667870/847648686896054313/1622107377710.gif", _title, _pubDate, _link)
+		content  string                 = fmt.Sprintf("> ```yaml\n> - 📰 %s\n> - 📅 %s\n> ```\n> **🔗 %s**\n", _title, _pubDate, _link)
 		message  discordwebhook.Message = discordwebhook.Message{
 			Username: &username,
 			Content:  &content,
