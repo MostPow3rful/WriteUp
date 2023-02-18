@@ -1,6 +1,7 @@
 package config
 
 import (
+	"github.com/JesusKian/WriteUp/src/structure"
 	_ "github.com/go-sql-driver/mysql"
 	"github.com/joho/godotenv"
 
@@ -9,12 +10,10 @@ import (
 )
 
 var (
-	logFile        *os.File = &os.File{}
-	err            error    = nil
-	PWD            string   = ""
-	DiscordWebhook string   = ""
-	TelegramApi    string   = ""
-	ChannelName    string   = ""
+	logFile        *os.File       = &os.File{}
+	err            error          = nil
+	PWD            string         = ""
+	EnvData        structure.Data = structure.Data{}
 
 	// Log Info
 	flags = log.Lshortfile
@@ -65,9 +64,14 @@ func SetLog(_logType string, _msg string) {
 
 func ReadENV() {
 	godotenv.Load("config.env")
-	DiscordWebhook = os.Getenv("DISCORD_WEBHOOK")
-	TelegramApi = os.Getenv("TELEGRAM_API")
-	ChannelName = os.Getenv("CHANNEL_NAME")
+
+	EnvData = structure.Data{
+		MysqlUsername:  os.Getenv("MYSQL_USERNAME"),
+		MysqlPassword:  os.Getenv("MYSQL_PASSWORD"),
+		TelegramApi:    os.Getenv("TELEGRAM_API"),
+		DiscordWebhook: os.Getenv("DISCORD_WEBHOOK"),
+		ChannelName:    os.Getenv("CHANNEL_NAME"),
+	}
 }
 
 func init() {
