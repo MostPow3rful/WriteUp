@@ -47,12 +47,26 @@
     - Command     : cd WriteUp
 
 - Step Three :
+    - Description : Fill The Variables in config.env file
+    - Variables :
+        - TELEGRAM_API : Enter Your Telegram's Bot's API
+        - DISCORD_WEBHOOK : Enter Your Discord's Webhook's URL
+        - CHANNEL_NAME : Enter Your Channel's ID with @
+        - MYSQL_USERNAME : Enter Your MySQL Username (default=root)
+        - MYSQL_PASSWORD : Enter Your MySQL Password (default=system password)
+        - Distro : Enter Number in range [1 , 4]
+            - 1 : Debian
+            - 2 : Arch
+            - 3 : Fedora
+            - 4 : Another
+
+- Step Four :
     - Description : You Must Run Config Files
     - Commands : 
         - python3 -m pip install -r requirements.txt
         - python3 run.py
 
-- Step Four :
+- Step Five :
     - Description : go run ./main.go
     - Command     : ./main
 ```
@@ -84,14 +98,14 @@
     - Example     : 1234567890:XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 ```
 
-## ⚙️ Config .env File
+## ⚙️ Config .env File Example
 ```yaml
-TELEGRAM_API=YOUR_TELEGRAM_API
-DISCORD_WEBHOOK=YOUR_DISCORD_WEBHOOK
-CHANNEL_NAME=@YOUR_CHANNEL_ID
-MYSQL_USERNAME=YOUR_MYSQL_USERNAME
-MYSQL_PASSWORD=YOUR_MYSQL_PASSWORD
-DISTRO=DISTRO_NUMBER
+TELEGRAM_API=1234567890:XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+DISCORD_WEBHOOK=https://discord.com/api/webhooks/.../...
+CHANNEL_NAME=https://t.me/WriteUpChannel
+MYSQL_USERNAME=JesusKian
+MYSQL_PASSWORD=ExampleP@33W0rd
+DISTRO=2
 ```
 
 ## ⚡️ Automate WriteUp Sender
@@ -101,6 +115,11 @@ DISTRO=DISTRO_NUMBER
     - Example : With Below Code, You Can Run main.go Every 1 Hours
     - Command : 0 */1 * * * /usr/bin/go /PATH/TO/WriteUp/main.go
     - Resource : https://geekflare.com/crontab-linux-with-real-time-examples-and-tools/
+```
+
+## 🔴 Important
+```yaml
+- Create a Mysql User And Grant Privileges For it =)
 ```
 
 ## 📹 Watch Video Below
