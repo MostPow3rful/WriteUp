@@ -2,7 +2,6 @@ https://medium.com/feed/tag/application-security
 https://medium.com/feed/tag/penetration-testing
 https://medium.com/feed/tag/hackthebox-writeup
 https://medium.com/feed/tag/bug-bounty-writeup
-https://medium.com/feed/tag/authentication
 https://medium.com/feed/tag/owasp-top-10
 https://medium.com/feed/tag/web-security
 https://medium.com/feed/tag/api-security
@@ -10,7 +9,6 @@ https://medium.com/feed/tag/web-hacking
 https://medium.com/feed/tag/bug-hunter
 https://medium.com/feed/tag/tryhackme
 https://medium.com/feed/tag/hackerone
-https://medium.com/feed/tag/red-team
 https://medium.com/feed/tag/writeup
 https://medium.com/@Hacker0x01/feed
 https://medium.com/feed/tag/recon
