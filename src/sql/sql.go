@@ -3,14 +3,10 @@ package sql
 import (
 	"github.com/JesusKian/WriteUp/src/config"
 	"github.com/JesusKian/WriteUp/src/discord"
-	"github.com/JesusKian/WriteUp/src/structure"
 	"github.com/JesusKian/WriteUp/src/telegram"
 	_ "github.com/go-sql-driver/mysql"
 
-	"bufio"
 	"database/sql"
-	"encoding/json"
-	"os"
 )
 
 var (
@@ -20,38 +16,7 @@ var (
 )
 
 func ConnectToSqlDatabase() {
-	var (
-		secretFile *os.File          = &os.File{}
-		scanner    *bufio.Scanner    = &bufio.Scanner{}
-		MySqlData  *structure.Secret = &structure.Secret{}
-		secretData string            = ""
-	)
-
-	secretFile, err = os.Open("./json/Secret.json")
-	if err != nil {
-		config.SetLog("E", "config.ConnectToSqlDatabase() -> Can't Open ./json/Secret.json")
-		config.SetLog("D", err.Error())
-		config.ErrorLog.Fatal(err)
-	}
-	defer secretFile.Close()
-
-	scanner = bufio.NewScanner(secretFile)
-	for scanner.Scan() {
-		if scanner.Text() == " " {
-			continue
-		}
-		secretData += scanner.Text()
-	}
-	json.Unmarshal([]byte(secretData), MySqlData)
-
-	err = scanner.Err()
-	if err != nil {
-		config.SetLog("E", "config.ConnectToSqlDatabase() -> Unknow Error From bufio.Scanner()")
-		config.SetLog("D", err.Error())
-		config.ErrorLog.Fatal(err)
-	}
-
-	Database, err = sql.Open("mysql", MySqlData.Username+":"+MySqlData.Password+"@tcp(0.0.0.0:3306)/WriteUp")
+	Database, err = sql.Open("mysql", config.EnvData.MysqlUsername+":"+config.EnvData.MysqlPassword+"@tcp(0.0.0.0:3306)/WriteUp")
 	if err != nil {
 		config.SetLog("E", "config.ConnectToSqlDatabase() -> Can't Open WriteUp Database")
 		config.SetLog("D", err.Error())
