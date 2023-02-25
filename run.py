@@ -222,7 +222,7 @@ class Config(Color):
         [... for _ in cursor]
 
         cursor.execute(
-            "CREATE TABLE IF NOT EXISTS data (Title VARCHAR(300), Title VARCHAR(300), Link VARCHAR(300), PublishDate VARCHAR(300))"
+            "CREATE TABLE IF NOT EXISTS data (Title VARCHAR(300), Link VARCHAR(300), PublishDate VARCHAR(300))"
         )
         database.commit()
         [... for _ in cursor]
